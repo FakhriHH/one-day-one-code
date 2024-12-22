@@ -16,8 +16,14 @@ function hitungUmur(tanggalLahir) {
     }
   
     return umur;
-  }
+}
   
-  const tanggalLahir = "2000-12-20";
-  console.log(`Tanggal Lahir: ${tanggalLahir}`);
-  console.log(`Umur: ${hitungUmur(tanggalLahir)} tahun`);
+const readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+  
+readline.question("Masukkan tanggal lahir (YYYY-MM-DD): ", (tanggalLahir) => {
+    console.log(`Umur: ${hitungUmur(tanggalLahir)} tahun`);
+    readline.close();
+});
